@@ -7,151 +7,240 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-body{font-family:'Comic Sans MS',Arial,sans-serif;margin:0;padding:0;background:linear-gradient(135deg,#e6f0ea,#d9e6dc);color:#1a3c34;overflow-x:hidden}.sidebar{position:fixed;left:0;top:0;height:100%;width:220px;background:linear-gradient(180deg,#4CAF50,#2e7d32);color:white;display:flex;flex-direction:column;align-items:center;padding-top:30px;box-shadow:2px 0 15px rgba(0,0,0,0.3);z-index:1000}.sidebar h1{font-size:2.5rem;margin-bottom:2rem;animation:glow 2s ease-in-out infinite alternate}.sidebar a{color:white;text-decoration:none;font-size:1.3rem;margin:1.2rem 0;transition:all 0.3s ease}.sidebar a:hover{color:#b2f5b2;transform:scale(1.2);text-shadow:0 0 10px #b2f5b2}.main-content{margin-left:240px;padding:3rem}.hero{background:linear-gradient(135deg,#4CAF50,#2e7d32);height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center}.hero h1{font-size:4.5rem;margin-bottom:1.5rem}.hero p{font-size:2rem;margin-bottom:2.5rem}.btn{background-color:#4CAF50;color:white;padding:1.2rem 2.5rem;border-radius:15px;text-decoration:none;font-size:1.5rem;font-weight:bold;transition:all 0.3s ease;box-shadow:0 5px 15px rgba(0,0,0,0.2)}.btn:hover{background-color:#2e7d32;transform:scale(1.2) rotate(5deg);box-shadow:0 8px 20px rgba(0,0,0,0.3);text-shadow:0 0 10px white}section{padding:5rem 2rem;min-height:50vh;background:rgba(255,255,255,0.95);border-radius:15px;margin:2rem 0;box-shadow:0 4px 12px rgba(0,0,0,0.1)}h2{font-size:3rem;color:#2e7d32;margin-bottom:2rem;text-align:center;text-shadow:0 0 5px rgba(46,125,50,0.3)}.card{background:linear-gradient(135deg,#ffffff,#f0f4f3);padding:2rem;margin:1rem;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:all 0.4s ease}.card:hover{transform:scale(1.1) rotate(2deg);box-shadow:0 8px 20px rgba(0,0,0,0.2);background:linear-gradient(135deg,#f0f4f3,#e6f0ea)}.product-container{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}.social-icons{display:flex;justify-content:center;gap:1.5rem;margin:2rem 0}.social-btn{background-color:#4CAF50;color:white;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;text-decoration:none;transition:all 0.3s ease;box-shadow:0 5px 15px rgba(0,0,0,0.2)}.social-btn.instagram{background-color:#e1306c}.social-btn.instagram:hover{background-color:#c13584;transform:scale(1.3) rotate(10deg)}.social-btn.youtube{background-color:#ff0000}.social-btn.youtube:hover{background-color:#cc0000;transform:scale(1.3) rotate(10deg)}.social-btn.facebook{background-color:#1877f2}.social-btn.facebook:hover{background-color:#1565c0;transform:scale(1.3) rotate(10deg)}.social-btn.tiktok{background-color:#000000}.social-btn.tiktok:hover{background-color:#333333;transform:scale(1.3) rotate(10deg)}footer{background:linear-gradient(135deg,#1a3c34,#2e7d32);color:white;padding:3rem;text-align:center;border-top-left-radius:15px;border-top-right-radius:15px}.footer-logo{font-size:2.8rem;font-weight:bold;color:#b2f5b2;margin-bottom:1.5rem;animation:pulse 2s infinite}#tienda-modal{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;z-index:1001}#tienda-modal.show{display:flex}.modal-content{background:linear-gradient(135deg,#ffffff,#f0f4f3);padding:30px;border-radius:15px;max-width:90%;max-height:90%;overflow-y:auto;box-shadow:0 8px 20px rgba(0,0,0,0.3)}.close-btn{background-color:#ff4d4d;color:white;border:none;padding:10px 20px;border-radius:10px;font-size:1.2rem;cursor:pointer}.close-btn:hover{background-color:#ff1a1a;transform:scale(1.1)}.product-card{background:white;padding:1.5rem;border-radius:12px;box-shadow:0 4px 8px rgba(0,0,0,0.1);width:280px;text-align:align-itemscenter}.product-card:hover{transform:scale(1.05);box-shadow:0 6px 12px rgba(0,0,0,0.15)}@keyframes glow{from{text-shadow:0 0 5px #b2f5b2,0 0 10px #b2f5b2}to{text-shadow:0 0 10px #b2f5b2,0 0 20px #b2f5b2}}@keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-20px)}60%{transform:translateY(-10px)}}@keyframes fadeIn{from{opacity:0.5}to{opacity:1}}@keyframes slideIn{from{transform:translateY(50px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
+body{font-family:'Comic Sans MS',Arial,sans-serif;margin:0;padding:0;background:linear-gradient(135deg,#e6f0ea,#d9e6dc);color:#1a3c34;overflow-x:hidden}.menu-toggle{position:fixed;left:15px;top:15px;font-size:1.8rem;color:#4CAF50;background:white;border-radius:50%;width:45px;height:45px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,0.2);z-index:1001;transition:transform 0.3s,color 0.3s}.menu-toggle:hover{transform:rotate(90deg);color:#2e7d32}.sidebar{position:fixed;left:-200px;top:0;height:100%;width:200px;background:linear-gradient(180deg,#4CAF50,#2e7d32);color:white;display:flex;flex-direction:column;align-items:center;padding-top:15px;box-shadow:2px 0 12px rgba(0,0,0,0.3);z-index:1000;transition:left 0.3s ease}.sidebar.active{left:0}.sidebar h1{font-size:2rem;margin-bottom:1.5rem;animation:glow 2s ease-in-out infinite alternate}.sidebar a{color:white;text-decoration:none;font-size:1rem;margin:1rem 0;width:80%;padding:8px;text-align:center;border-radius:8px;transition:all 0.3s ease}.sidebar a:hover{color:#b2f5b2;background:rgba(255,255,255,0.2);transform:scale(1.1);text-shadow:0 0 12px #b2f5b2}.main-content{margin-left:0;padding:2rem;transition:margin-left 0.3s ease}.main-content.shifted{margin-left:200px}.hero{background:linear-gradient(135deg,#4CAF50,#2e7d32);height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;border-radius:15px;box-shadow:0 6px 15px rgba(0,0,0,0.15)}.hero h1{font-size:3.5rem;margin-bottom:1rem;animation:bounce 1.5s infinite}.hero p{font-size:1.5rem;margin-bottom:2rem;animation:fadeIn 2s infinite alternate}.btn{background-color:#4CAF50;color:white;padding:1rem 2rem;border-radius:12px;text-decoration:none;font-size:1.2rem;font-weight:bold;transition:all 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.15)}.btn:hover{background-color:#2e7d32;transform:scale(1.15) rotate(5deg);box-shadow:0 6px 15px rgba(0,0,0,0.2);text-shadow:0 0 8px white}section{padding:3rem 1.5rem;min-height:40vh;background:rgba(255,255,255,0.9);border-radius:15px;margin:1.5rem 0;box-shadow:0 4px 12px rgba(0,0,0,0.08);animation:slideIn 1s ease-out}h2{font-size:2.5rem;color:#2e7d32;margin-bottom:1.5rem;text-align:center;text-shadow:0 0 4px rgba(46,125,50,0.2)}.card{background:linear-gradient(135deg,#ffffff,#f0f4f3);padding:1.5rem;margin:1rem;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,0.08);transition:all 0.4s ease}.card:hover{transform:scale(1.1) rotate(2deg);box-shadow:0 6px 15px rgba(0,0,0,0.15);background:linear-gradient(135deg,#f0f4f3,#e6f0ea)}.product-container{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}.social-icons{display:flex;justify-content:center;gap:1.5rem;margin:1.5rem 0}.social-btn{background-color:#4CAF50;color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;transition:all 0.3s ease;box-shadow:0 3px 10px rgba(0,0,0,0.15)}.social-btn.instagram{background-color:#e1306c}.social-btn.instagram:hover{background-color:#c13584;transform:scale(1.2) rotate(10deg)}.social-btn.youtube{background-color:#ff0000}.social-btn.youtube:hover{background-color:#cc0000;transform:scale(1.2) rotate(10deg)}.social-btn.facebook{background-color:#1877f2}.social-btn.facebook:hover{background-color:#1565c0;transform:scale(1.2) rotate(10deg)}.social-btn.tiktok{background-color:#000000}.social-btn.tiktok:hover{background-color:#333333;transform:scale(1.2) rotate(10deg)}footer{background:linear-gradient(135deg,#1a3c34,#2e7d32);color:white;padding:2rem;text-align:center;border-top-left-radius:15px;border-top-right-radius:15px;box-shadow:0 -4px 12px rgba(0,0,0,0.15)}.footer-logo{font-size:2.2rem;font-weight:bold;color:#b2f5b2;margin-bottom:1rem;animation:pulse 2s infinite}footer a{color:#b2f5b2;text-decoration:none;font-size:1rem;transition:all 0.3s ease}footer a:hover{color:white;transform:scale(1.1);text-shadow:0 0 8px #b2f5b2}#tienda-modal{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center;z-index:1001}#tienda-modal.show{display:flex}.modal-content{background:linear-gradient(135deg,#ffffff,#f0f4f3);padding:20px;border-radius:15px;max-width:90%;max-height:90%;overflow-y:auto;box-shadow:0 8px 20px rgba(0,0,0,0.2)}.close-btn{background-color:#ff4d4d;color:white;border:none;padding:8px 16px;border-radius:8px;font-size:1rem;cursor:pointer;transition:all 0.3s ease}.close-btn:hover{background-color:#ff1a1a;transform:scale(1.1)}.product-item{display:flex;flex-direction:column;align-items:center;gap:10px;padding:1rem;border:1px solid #e0e0e0;border-radius:10px;background:white;transition:all 0.3s ease}.product-item:hover{transform:scale(1.05);box-shadow:0 6px 15px rgba(0,0,0,0.1)}.product-item img{width:100%;height:150px;object-fit:cover;border-radius:8px}.product-item h3{font-size:1.2rem;color:#2e7d32}.product-item p{font-size:1rem}.product-item .btn{font-size:1rem;padding:0.8rem 1.5rem}.whatsapp-float{position:fixed;bottom:15px;right:15px;background-color:#25D366;color:white;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 3px 10px rgba(0,0,0,0.15);transition:transform 0.3s;z-index:1002}.whatsapp-float:hover{transform:scale(1.1)}.cart-float{position:fixed;bottom:75px;right:15px;background-color:#4CAF50;color:white;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 3px 10px rgba(0,0,0,0.15);transition:transform 0.3s;z-index:1002}.cart-float:hover{transform:scale(1.1)}.cart-count{position:absolute;top:-8px;right:-8px;background-color:#ff4d4d;color:white;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.8rem}.cart-modal{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center;z-index:1001}.cart-modal.show{display:flex}.cart-content{background:linear-gradient(135deg,#ffffff,#f0f4f3);padding:20px;border-radius:15px;max-width:90%;max-height:90%;overflow-y:auto;box-shadow:0 8px 20px rgba(0,0,0,0.2)}@keyframes glow{from{text-shadow:0 0 5px #b2f5b2,0 0 10px #b2f5b2}to{text-shadow:0 0 12px #b2f5b2,0 0 20px #b2f5b2}}@keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-15px)}60%{transform:translateY(-8px)}}@keyframes fadeIn{from{opacity:0.5}to{opacity:1}}@keyframes slideIn{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h1 class="animate__animated animate__pulse">EcoSnack</h1>
-        <a href="#inicio" class="animate__animated animate__fadeIn"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#quienes-somos" class="animate__animated animate__fadeIn"><i class="fas fa-users"></i> ¿Quiénes Somos?</a>
-        <a href="#mision-vision" class="animate__animated animate__fadeIn"><i class="fas fa-bullseye"></i> Misión y Visión</a>
-        <a href="#beneficios" class="animate__animated animate__fadeIn"><i class="fas fa-heart"></i> Beneficios</a>
-        <a href="#contacto" class="animate__animated animate__fadeIn"><i class="fas fa-envelope"></i> Contacto</a>
+    <div class="menu-toggle animate__animated animate__fadeIn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="sidebar animate__animated animate__slideInLeft">
+        <h1>EcoSnack</h1>
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#quienes-somos"><i class="fas fa-users"></i> Quiénes</a>
+        <a href="#mision-vision"><i class="fas fa-bullseye"></i> Misión</a>
+        <a href="#beneficios"><i class="fas fa-heart"></i> Beneficios</a>
+        <a href="#publico-objetivo"><i class="fas fa-user-friends"></i> Público</a>
+        <a href="#competidores"><i class="fas fa-chart-line"></i> Compet.</a>
+        <a href="#estrategias"><i class="fas fa-bullhorn"></i> Estrateg.</a>
+        <a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a>
     </div>
     <div class="main-content">
         <section id="inicio" class="hero animate__animated animate__fadeIn">
             <h1 class="animate__animated animate__bounceIn">EcoSnack</h1>
-            <p class="animate__animated animate__fadeInUp">Snacks energéticos, naturales y nutritivos para un estilo de vida saludable.</p>
-            <a href="#tienda-modal" class="btn animate__animated animate__pulse" onclick="openStore()">Descubre Nuestra Tienda</a>
+            <p class="animate__animated animate__fadeInUp">Snacks energéticos y naturales.</p>
+            <a href="#tienda-modal" class="btn animate__animated animate__pulse" onclick="openStore()">Descubre Tienda</a>
         </section>
 
         <section id="quienes-somos" class="animate__animated animate__fadeInLeft">
             <h2><i class="fas fa-users"></i> ¿Quiénes Somos?</h2>
-            <p class="animate__animated animate__fadeInUp">EcoSnack es una marca comprometida con ofrecer snacks energéticos, naturales y nutritivos que promueven un estilo de vida saludable y consciente. Utilizamos ingredientes puros y sostenibles como avena, crema de maní, linaza y chía, dirigidos a personas de todas las edades, incluyendo familias, deportistas, estudiantes y profesionales interesados en productos saludables. A diferencia de nuestro competidor principal, Nutripoint, que se enfoca solo en atletas, EcoSnack es para todos los que buscan bienestar y sabor.</p>
+            <p class="animate__animated animate__fadeInUp">EcoSnack ofrece snacks energéticos y naturales con ingredientes como avena, crema de maní, linaza y chía. Dirigidos a todos: familias, deportistas, estudiantes. A diferencia de Nutripoint (solo atletas), somos inclusivos.</p>
         </section>
 
         <section id="mision-vision" class="animate__animated animate__fadeInRight">
             <h2><i class="fas fa-bullseye"></i> Misión y Visión</h2>
             <div class="card animate__animated animate__zoomIn">
                 <h3>Misión</h3>
-                <p>Ofrecer snacks energéticos, naturales y nutritivos que promuevan un estilo de vida saludable y consciente, utilizando ingredientes puros y sostenibles que contribuyan al bienestar físico y al respeto por el medio ambiente.</p>
+                <p>Ofrecer snacks saludables con ingredientes sostenibles para un estilo de vida consciente.</p>
             </div>
             <div class="card animate__animated animate__zoomIn">
                 <h3>Visión</h3>
-                <p>Convertirse en una marca referente de alimentación saludable en el mercado nacional, reconocida por su compromiso con la calidad, la sostenibilidad y el impulso de una nutrición equilibrada que inspire a las personas a reconectarse con lo natural.</p>
+                <p>Ser referente nacional en alimentación saludable con calidad y sostenibilidad.</p>
             </div>
         </section>
 
         <section id="beneficios" class="animate__animated animate__fadeInUp">
-            <h2><i class="fas fa-heart"></i> Beneficios de EcoSnack</h2>
+            <h2><i class="fas fa-heart"></i> Beneficios</h2>
             <ul class="product-container">
-                <li class="card animate__animated animate__lightSpeedInRight"><i class="fas fa-bolt"></i> Aporte de energía natural: Ideal para antes o después de actividades físicas.</li>
-                <li class="card animate__animated animate__lightSpeedInRight"><i class="fas fa-dumbbell"></i> Fuente de proteína: Gracias al scoop de proteína y la linaza.</li>
-                <li class="card animate__animated animate__lightSpeedInRight"><i class="fas fa-seedling"></i> Fibra y digestión saludable: Avena y chía son ricas en fibra.</li>
-                <li class="card animate__animated animate__lightSpeedInLeft"><i class="fas fa-heartbeat"></i> Grasas saludables: Crema de maní y linaza aportan ácidos grasos esenciales (omega 3 y 6).</li>
-                <li class="card animate__animated animate__lightSpeedInLeft"><i class="fas fa-clock"></i> Saciedad prolongada: Perfecto para controlar el hambre entre comidas.</li>
-                <li class="card animate__animated animate__lightSpeedInLeft"><i class="fas fa-leaf"></i> Ingredientes naturales: Sin conservantes ni aditivos artificiales.</li>
+                <li class="card animate__animated animate__lightSpeedInRight"><i class="fas fa-bolt"></i> Energía natural para actividades.</li>
+                <li class="card animate__animated animate__lightSpeedInRight"><i class="fas fa-dumbbell"></i> Proteína con linaza.</li>
+                <li class="card animate__animated animate__lightSpeedInRight"><i class="fas fa-seedling"></i> Fibra con avena y chía.</li>
+                <li class="card animate__animated animate__lightSpeedInLeft"><i class="fas fa-heartbeat"></i> Grasas saludables (omega 3/6).</li>
+                <li class="card animate__animated animate__lightSpeedInLeft"><i class="fas fa-clock"></i> Saciedad prolongada.</li>
+                <li class="card animate__animated animate__lightSpeedInLeft"><i class="fas fa-leaf"></i> Ingredientes naturales.</li>
+            </ul>
+        </section>
+
+        <section id="publico-objetivo" class="animate__animated animate__fadeInLeft">
+            <h2><i class="fas fa-user-friends"></i> Público Objetivo</h2>
+            <p class="animate__animated animate__fadeInUp">Familias, deportistas, estudiantes y profesionales que buscan snacks nutritivos y sostenibles.</p>
+        </section>
+
+        <section id="competidores" class="animate__animated animate__fadeInRight">
+            <h2><i class="fas fa-chart-line"></i> Competidores</h2>
+            <p class="animate__animated animate__fadeInUp">Nutripoint se enfoca en atletas. EcoSnack es inclusivo con sostenibilidad.</p>
+        </section>
+
+        <section id="estrategias" class="animate__animated animate__fadeInUp">
+            <h2><i class="fas fa-bullhorn"></i> Estrategias</h2>
+            <p class="animate__animated animate__fadeInUp">Conexión con público:</p>
+            <ul class="product-container">
+                <li class="card animate__animated animate__zoomIn"><i class="fas fa-poll"></i> Encuestas en Instagram.</li>
+                <li class="card animate__animated animate__zoomIn"><i class="fas fa-video"></i> Videos en TikTok.</li>
+                <li class="card animate__animated animate__zoomIn"><i class="fas fa-star"></i> Influencers (10k vistas).</li>
+                <li class="card animate__animated animate__zoomIn"><i class="fas fa-trophy"></i> Concursos #EcoSnacks.</li>
+                <li class="card animate__animated animate__zoomIn"><i class="fas fa-store"></i> Tiendas orgánicas.</li>
+                <li class="card animate__animated animate__zoomIn"><i class="fas fa-envelope"></i> Boletín mensual.</li>
+                <li class="card animate__animated animate__zoomIn"><i class="fas fa-users"></i> Club fidelidad (10% off).</li>
             </ul>
         </section>
 
         <section id="contacto" class="animate__animated animate__slideInUp">
-            <h2><i class="fas fa-envelope"></i> ¡Conéctate con EcoSnack!</h2>
-            <p class="animate__animated animate__fadeInUp">Síguenos en redes sociales para recetas, tips de nutrición y promociones exclusivas. Participa en nuestras encuestas en Instagram sobre sabor, sostenibilidad o precio para ayudarnos a mejorar. Únete a nuestro club de lealtad en <a href="http://www.ecoshacks.es" class="text-green-600 hover:underline">www.ecoshacks.es</a> y obtén un 10% de descuento tras 5 compras. ¡Mira nuestras historias semanales destacando a clientes como tú!</p>
-            <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank" class="social-btn instagram animate__animated animate__tada" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com" target="_blank" class="social-btn youtube animate__animated animate__tada" title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.facebook.com" target="_blank" class="social-btn facebook animate__animated animate__tada" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.tiktok.com" target="_blank" class="social-btn tiktok animate__animated animate__tada" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <p class="animate__animated animate__fadeIn">Contáctanos en <a href="mailto:ecosnacks2@gmail.com" class="text-green-600 hover:underline">ecosnacks2@gmail.com</a> o suscríbete a nuestro boletín mensual con tips de nutrición.</p>
-            <a href="#tienda-modal" class="btn animate__animated animate__pulse" onclick="openStore()">Visita Nuestra Tienda</a>
-        </section>
-
-        <footer>
-            <p class="footer-logo animate__animated animate__fadeIn">EcoSnack</p>
-            <p class="animate__animated animate__fadeIn">© 2025 EcoSnack. Todos los derechos reservados.</p>
-            <p class="animate__animated animate__fadeIn">Colaboramos con influencers para promover EcoSnack con 4 publicaciones mensuales y un alcance mínimo de 10,000 vistas. Si las ventas online no cumplen expectativas, participamos en ferias de comida saludable y asociamos con tiendas orgánicas locales.</p>
+            <h2><i class="fas fa-envelope"></i> Contacto</h2>
+            <p class="animate__animated animate__fadeInUp">Síguenos en redes y únete a <a href="http://www.ecosnacks.es" class="text-green-600 hover:underline">www.ecosnacks.es</a> (10% off).</p>
             <div class="social-icons">
                 <a href="https://www.instagram.com" target="_blank" class="social-btn instagram animate__animated animate__tada"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.youtube.com" target="_blank" class="social-btn youtube animate__animated animate__tada"><i class="fab fa-youtube"></i></a>
                 <a href="https://www.facebook.com" target="_blank" class="social-btn facebook animate__animated animate__tada"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.tiktok.com" target="_blank" class="social-btn tiktok animate__animated animate__tada"><i class="fab fa-tiktok"></i></a>
             </div>
-            <a href="#tienda-modal" class="animate__animated animate__fadeIn" onclick="openStore()">Visita nuestra tienda</a>
+            <p class="animate__animated animate__fadeIn">Email: <a href="mailto:ecosnacks2@gmail.com" class="text-green-600 hover:underline">ecosnacks2@gmail.com</a></p>
+            <a href="#tienda-modal" class="btn animate__animated animate__pulse" onclick="openStore()">Visita Tienda</a>
+        </section>
+
+        <footer>
+            <p class="footer-logo animate__animated animate__fadeIn">EcoSnack</p>
+            <p class="animate__animated animate__fadeIn">© 2025 EcoSnack</p>
+            <p class="animate__animated animate__fadeIn">Influencers y ferias si necesario.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank" class="social-btn instagram animate__animated animate__tada"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank" class="social-btn youtube animate__animated animate__tada"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com" target="_blank" class="social-btn facebook animate__animated animate__tada"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com" target="_blank" class="social-btn tiktok animate__animated animate__tada"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <a href="#tienda-modal" class="animate__animated animate__fadeIn" onclick="openStore()">Tienda</a>
         </footer>
     </div>
 
-    <div id="tienda-modal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50">
+    <div id="tienda-modal" class="fixed inset-0 bg-black bg-opacity-85 hidden flex items-center justify-center z-50">
         <div class="modal-content animate__animated animate__zoomIn">
-            <h2 class="text-3xl font-bold text-green-600 mb-4"><i class="fas fa-shopping-cart"></i> Tienda EcoSnack</h2>
-            <div class="mb-4">
-                <input type="text" id="search-bar" placeholder="Buscar productos..." class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 animate__animated animate__fadeIn">
-            </div>
-            <div class="mb-4">
-                <label class="block mb-2 text-lg font-bold"><i class="fas fa-filter"></i> Filtros:</label>
-                <select id="category-filter" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 animate__animated animate__fadeIn">
-                    <option value="">Todas las categorías</option>
-                    <option value="original">Original</option>
-                    <option value="proteina">Proteína</option>
-                    <option value="fibra">Fibra</option>
+            <h2 class="text-2.5rem font-bold text-green-600 mb-3"><i class="fas fa-shopping-cart"></i> Tienda EcoSnack</h2>
+            <div class="mb-3 flex gap-3">
+                <input type="text" id="search-bar" placeholder="Buscar..." class="w-2/3 p-2 border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 animate__animated animate__fadeIn">
+                <select id="sort-filter" class="w-1/3 p-2 border-2 border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 animate__animated animate__fadeIn">
+                    <option value="default">Ordenar por</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
                 </select>
             </div>
-            <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="product-card animate__animated animate__rubberBand">
-                    <h3 class="text-xl font-bold">EcoSnack Original</h3>
-                    <p>Bolitas energéticas con avena, crema de maní y linaza.</p>
-                    <p class="text-lg font-bold text-green-600">Precio: $5.99</p>
-                    <p class="text-sm text-gray-600">Oferta: 10% de descuento esta semana!</p>
-                    <a href="#" class="btn mt-2 animate__animated animate__pulse"><i class="fas fa-cart-plus"></i> Añadir al carrito</a>
+            <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="product-item animate__animated animate__fadeIn" data-price="0" data-category="original">
+                    <img src="[Inserta imagen aquí]" alt="EcoSnack Original" class="w-full h-36 object-cover rounded-lg">
+                    <h3 class="text-lg font-bold text-green-600">EcoSnack Original</h3>
+                    <p class="text-md" id="price-original">[Agrega precio aquí]</p>
+                    <a href="#" class="btn mt-2 animate__animated animate__pulse" onclick="addToCart('EcoSnack Original', document.getElementById('price-original').textContent)"><i class="fas fa-cart-plus"></i> Comprar</a>
                 </div>
-                <div class="product-card animate__animated animate__rubberBand">
-                    <h3 class="text-xl font-bold">EcoSnack Proteína</h3>
-                    <p>Mezcla rica en proteína con un toque de miel natural.</p>
-                    <p class="text-lg font-bold text-green-600">Precio: $6.99</p>
-                    <p class="text-sm text-gray-600">Oferta: Compra 2 y obtén 1 gratis!</p>
-                    <a href="#" class="btn mt-2 animate__animated animate__pulse"><i class="fas fa-cart-plus"></i> Añadir al carrito</a>
+                <div class="product-item animate__animated animate__fadeIn" data-price="0" data-category="proteina">
+                    <img src="[Inserta imagen aquí]" alt="EcoSnack Proteína" class="w-full h-36 object-cover rounded-lg">
+                    <h3 class="text-lg font-bold text-green-600">EcoSnack Proteína</h3>
+                    <p class="text-md" id="price-proteina">[Agrega precio aquí]</p>
+                    <a href="#" class="btn mt-2 animate__animated animate__pulse" onclick="addToCart('EcoSnack Proteína', document.getElementById('price-proteina').textContent)"><i class="fas fa-cart-plus"></i> Comprar</a>
                 </div>
-                <div class="product-card animate__animated animate__rubberBand">
-                    <h3 class="text-xl font-bold">EcoSnack Fibra</h3>
-                    <p>Alto en fibra, ideal para una digestión saludable.</p>
-                    <p class="text-lg font-bold text-green-600">Precio: $5.49</p>
-                    <p class="text-sm text-gray-600">Oferta: Envío gratis por compras mayores a $20!</p>
-                    <a href="#" class="btn mt-2 animate__animated animate__pulse"><i class="fas fa-cart-plus"></i> Añadir al carrito</a>
+                <div class="product-item animate__animated animate__fadeIn" data-price="0" data-category="fibra">
+                    <img src="[Inserta imagen aquí]" alt="EcoSnack Fibra" class="w-full h-36 object-cover rounded-lg">
+                    <h3 class="text-lg font-bold text-green-600">EcoSnack Fibra</h3>
+                    <p class="text-md" id="price-fibra">[Agrega precio aquí]</p>
+                    <a href="#" class="btn mt-2 animate__animated animate__pulse" onclick="addToCart('EcoSnack Fibra', document.getElementById('price-fibra').textContent)"><i class="fas fa-cart-plus"></i> Comprar</a>
                 </div>
             </div>
-            <button onclick="closeStore()" class="close-btn mt-4 animate__animated animate__pulse">Cerrar Tienda</button>
+            <button onclick="closeStore()" class="close-btn mt-3 animate__animated animate__pulse">Cerrar</button>
         </div>
     </div>
 
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content animate__animated animate__zoomIn">
+            <h2 class="text-2.5rem font-bold text-green-600 mb-3"><i class="fas fa-shopping-cart"></i> Tu Carrito</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total" class="text-lg font-bold mt-3">Total: $0.00</p>
+            <button onclick="closeCart()" class="close-btn mt-3 animate__animated animate__pulse">Cerrar</button>
+        </div>
+    </div>
+
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-float animate__animated animate__fadeIn"><i class="fab fa-whatsapp"></i></a>
+    <div class="cart-float animate__animated animate__fadeIn" onclick="openCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
     <script>
+        let cart = [];
+        let cartTotal = 0;
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        }
+
         function openStore() {
             document.querySelector('.main-content').style.display = 'none';
-            document.getElementById('tienda-modal').classList.remove('hidden');
+            document.getElementById('tienda-modal').classList.add('show');
             document.body.style.overflow = 'hidden';
         }
+
         function closeStore() {
             document.querySelector('.main-content').style.display = 'block';
-            document.getElementById('tienda-modal').classList.add('hidden');
+            document.getElementById('tienda-modal').classList.remove('show');
             document.body.style.overflow = 'auto';
+        }
+
+        function openCart() {
+            document.getElementById('cart-modal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+            updateCartDisplay();
+        }
+
+        function closeCart() {
+            document.getElementById('cart-modal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function addToCart(productName, priceText) {
+            const price = parseFloat(priceText.replace('$', '')) || 0;
+            cart.push({ name: productName, price: price });
+            cartTotal += price;
+            document.getElementById('cart-count').textContent = cart.length;
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+            });
+            document.getElementById('cart-total').textContent = `Total: $${cartTotal.toFixed(2)}`;
         }
 
         document.getElementById('search-bar').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-            const products = document.querySelectorAll('.product-card');
+            const products = document.querySelectorAll('.product-item');
             products.forEach(product => {
                 const text = product.textContent.toLowerCase();
                 product.style.display = text.includes(searchTerm) ? 'block' : 'none';
             });
         });
 
-        document.getElementById('category-filter').addEventListener('change', function(e) {
-            const category = e.target.value.toLowerCase();
-            const products = document.querySelectorAll('.product-card');
-            products.forEach(product => {
-                const productCategory = product.querySelector('h3').textContent.toLowerCase();
-                product.style.display = !category || productCategory.includes(category) ? 'block' : 'none';
+        document.getElementById('sort-filter').addEventListener('change', function(e) {
+            const sortOption = e.target.value;
+            const products = Array.from(document.querySelectorAll('.product-item'));
+            products.sort((a, b) => {
+                const priceA = parseFloat(a.getAttribute('data-price')) || 0;
+                const priceB = parseFloat(b.getAttribute('data-price')) || 0;
+                return sortOption === 'price-asc' ? priceA - priceB : sortOption === 'price-desc' ? priceB - priceA : 0;
             });
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+            products.forEach(product => productList.appendChild(product));
+        });
+
+        // Actualizar precios dinámicamente
+        document.querySelectorAll('.product-item p').forEach(p => {
+            const price = parseFloat(p.textContent.replace('$', '')) || 0;
+            p.parentElement.setAttribute('data-price', price);
         });
     </script>
 </body>
